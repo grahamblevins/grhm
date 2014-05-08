@@ -1,0 +1,12 @@
+{
+	"name": "grhm",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"almond": "0.2.9",
+		"html5shiv": "3.7.2",
+		"normalize.css": "3.0.1",
+		"r.js": "2.1.11",
+		"requirejs": "2.1.11"
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "name": "grhm",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "bower": "1.3.3",
+    "gulp": "3.6.2",
+    "gulp-compass": "1.1.8",
+    "gulp-imagemin": "0.5.0"
+  },
+  "engine": "node >= 0.10.26"
+}
