@@ -1,14 +1,12 @@
-// Compass
-
-@import "compass";
-$legacy-support-for-ie: false;
-
-
 // Normalize
 
 @import '../lib/normalize.css/normalize.css';
 
 // Theme
+
+@import 'global';
+$font-size: 17px;
+$rem-base: $font-size;
 
 *,
 *:before,
@@ -16,15 +14,43 @@ $legacy-support-for-ie: false;
 	@include box-sizing(border-box);
 }
 
+html,
+body {
+	font-size: $font-size;
+}
+
+html {
+	&.u-isFullscreen {
+		&,
+		body,
+		#main {
+			height: 100%;
+			width: 100%;
+		}
+		body {
+			display: table;
+		}
+		#main {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+
 body {
   background-color: #040409;
   color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	line-height: 1.5;
+	text-align: center;
+	text-transform: uppercase;
   &:before {
     @include background-size(cover);
-    @include filter(blur(5px) brightness(50%));
-    background-image: url(../img/IMG_2847.JPG);
-    background-position: center bottom;
+    @include filter(blur(2px));
+		@include opacity(.4);
+    background-image: url(../img/IMG_1057.JPG);
+    background-position: center center;
     background-repeat: no-repeat;
     bottom: 0;
     content: '';
@@ -34,4 +60,73 @@ body {
     top: 0;
     z-index: -1;
   }
+}
+
+a {
+	color: #ffffff;
+	padding-bottom: 2px;
+	text-decoration: none;
+	&:hover {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	}
+}
+
+h1 {
+	@include font-size(68px);
+	font-weight: 300;
+}
+
+.Menu {
+	display: block;
+  font-size: 0;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.Menu-item {
+	@include font-size($rem-base);
+  display: block;
+}
+
+.Menu--hz {
+	> .Menu-item {
+		@include inline-block(baseline);
+	}
+}
+
+#header {
+	h1 {
+		margin: 0;
+	}
+}
+
+#details {
+	word-spacing: 3px;
+}
+
+#about {
+	@include font-size(24px);
+	margin: 0;
+}
+
+#place {
+	margin: 5px 0;
+}
+
+#links {
+	margin: 30px 0;
+	.Menu--hz {
+		> .Menu-item {
+			&:first-child {
+				&:before {
+					display: none;
+				}
+			}
+			&:before {
+				content: '∙';
+				margin: 0 10px;
+			}
+		}
+	}
 }
