@@ -15,6 +15,6 @@ RewriteRule (page|post|search|tagged)/(.*) http://grahamblevins.tumblr.com/$1/$2
 
 RewriteCond %{HTTP_HOST} ^(.+\.)?grahamblevins\.com [OR]
 RewriteCond %{HTTP_HOST} ^.+\.grhm\.me
-RewriteRule . http://grhm.me [R=301,L]
+RewriteRule .* http://grhm.me [R=301,L]
 
 </IfModule>
