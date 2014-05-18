@@ -130,3 +130,50 @@ h1 {
 		}
 	}
 }
+
+@media only screen and (max-width : 480px) {
+
+html,
+body {
+	@include font-size(16px);
+}
+
+body {
+	font-weight: 300;
+	padding: 0 10px;
+}
+
+a {
+	&:hover {
+		border: 0;
+	}
+}
+
+h1 {
+	@include font-size(36px);
+}
+
+#header {
+	h1 {
+		margin: 20px 0;
+	}
+}
+
+#about {
+	@include font-size(20px);
+	margin: 20px 0;
+}
+
+#links {
+	.Menu {
+		> .Menu-item {
+			display: block;
+			line-height: 44px;
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+}
